@@ -8,13 +8,21 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-var percentage = 66;
-var test = 'hello';
+
 
 class Keyword extends React.Component{
   render(){
+    //const pairs = {'word1':66,'word2':77,'word3':15,};
+    const percentages = [66,77,15]
+    const matches = ['word1','word2','word3']
+    const results = percentages.map((percentages, index) => {
+      const match = matches[index];
+      return (
+        <Col md={10-index}><CircularProgressbar value={percentages} text={match}/></Col>
+      )
+    });
     return(
-      <CircularProgressbar value={percentage} text={`${test}`} />
+      <div>{results}</div>
     );
   }
 }
@@ -28,14 +36,9 @@ function App() {
         <Row>
           <Col md={4}><p>hello world!</p></Col>
           <Col md={8}>
-            <Row>
-              <Col>
-                <Keyword />
-              </Col>
-              <Col>
-                <Keyword />
-              </Col>
-            </Row>
+            <Container fluid={true}>
+                <Keyword/>
+            </Container>
           </Col>
         </Row>
     </Container>
