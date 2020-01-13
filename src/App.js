@@ -23,7 +23,7 @@ function App() {
   const percentage = 66;
   return (
     <div className="App">
-      <header class="App-header"><p>title</p>
+      <header class="App-header"><p>title</p></header>
       <Container>
         <Row>
           <Col md={4}><p>hello world!</p></Col>
@@ -39,7 +39,6 @@ function App() {
           </Col>
         </Row>
     </Container>
-    </header>
     </div>
   );
 }
